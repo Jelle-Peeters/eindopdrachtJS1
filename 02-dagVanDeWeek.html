@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Javascript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+        "use strict";
+        const datum = new Date();
+        let dag = datum.getDay()
+        let dagBenamingen = ["Maandag","Dinsdag","Woensdag","Donderdag","Vrijdag","Zaterdag","Zondag"];
+    
+        document.write(`<p>Vandaag is het ${dagBenamingen[dag]}</p>`);
+        if (dag >= 5) {
+            document.write(`<p>Het is weekend, even bekomen.</p>`);
+        }
+        else{
+            document.write(`<p>Het is een werkdag, aan de slag dus.</p>`);
+        }
+      </script>
+  </head>
+
+  <body>
+  </body>
+</html>

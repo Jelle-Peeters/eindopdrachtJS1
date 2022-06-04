@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Javascript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      function controle(test) {
+        if (test == null) {
+          document.write("U heeft geannulleerd!");
+          return false;
+        } else if (test.length == 0) {
+          document.write("U heeft niets ingegeven!");
+          return false;
+        } else if (test.search(/\D+/) == 0) {
+          document.write("Dit is geen getal!");
+          return false;
+        } else {
+          return true;
+        }
+      }
+
+      function omzettenCelsius() {
+        let gradenC = prompt("Hoeveel graden Celsius wil je omzetten?");
+        let allesOk = controle(gradenC);
+
+        if (allesOk == true) {
+          let resultaat = (gradenC * 9) / 5 + 32;
+          alert(`${gradenC} °C is ${resultaat}°F`);
+        }
+      }
+
+      function omzettenFarhenheit() {
+        let gradenF = prompt("Hoeveel graden Fahrenheit wil je omzetten?");
+        let allesOk = controle(gradenF);
+
+        if (allesOk == true) {
+          let resultaat = ((gradenF - 32)*5)/9
+          alert(`${gradenF} °C is ${resultaat}°F`);
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <button onclick="omzettenCelsius()" id="celsius">
+      Omzetten van C naar F
+    </button>
+    <button onclick="omzettenFarhenheit()" id="fahrenheit">
+      Omzetten van F naar C
+    </button>
+  </body>
+</html>
