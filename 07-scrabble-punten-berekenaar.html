@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Javascript</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        "use strict";
+        const alfabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+        const score = [1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10];
+
+
+        let woord = prompt("Voor welk woord wil je de score berekenen?");
+        let maakHoofdletters = woord.toUpperCase();
+        const vergelijk = maakHoofdletters.split("");
+
+        document.write(`<h1>Scrabble punten berekenaar</h1><p>Het woord is ${woord}.</p>`);
+
+        let totaal = 0;
+        for (let i = 0; i < vergelijk.length; i++) {
+            let zoekLetter = alfabet.indexOf(vergelijk[i]);
+            totaal += score[zoekLetter];
+            document.write(`<p>${vergelijk[i]} - ${score[zoekLetter]}</p>`);
+        }
+        document.write(`<p>Totaal: ${totaal} punten.</p>`);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

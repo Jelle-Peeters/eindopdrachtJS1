@@ -6,6 +6,7 @@
     <title>Javascript</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
+      "use strict";
       function controle(test) {
         if (test == null) {
           document.write("U heeft geannulleerd!");
@@ -27,7 +28,7 @@
 
         if (allesOk == true) {
           let resultaat = (gradenC * 9) / 5 + 32;
-          alert(`${gradenC} °C is ${resultaat}°F`);
+          alert(`${gradenC}°C is ${resultaat}°F`);
         }
       }
 
@@ -36,8 +37,8 @@
         let allesOk = controle(gradenF);
 
         if (allesOk == true) {
-          let resultaat = ((gradenF - 32)*5)/9
-          alert(`${gradenF} °C is ${resultaat}°F`);
+          let resultaat = ((gradenF - 32)*5)/9;
+          alert(`${gradenF}°F is ${resultaat}°C`);
         }
       }
     </script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Javascript</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        "use strict";
+        berekenHoeveelheid();
+        function tonen(toonJaar, toonLeeftijd, toonAantal) {
+            const huidigJaar = new Date().getFullYear();
+            let berekenLeeftijd = huidigJaar - toonJaar;
+            let berekenAantal = (toonAantal * 365) * (toonLeeftijd - berekenLeeftijd);
+            document.write(`Je bent nu ${berekenLeeftijd}. Tegen ${toonAantal} koppen koffie per dag zal je ${berekenAantal} koppen koffie drinken als je ${toonLeeftijd} jaar oud zal worden.`);
+        }
+        function controle(getal1, getal2, getal3) {
+            if (getal1 == null || getal2 == null || getal3 == null) {
+                document.write("U heeft geannulleerd!");
+                return false;
+            } else if (getal1.length == 0 || getal2.length == 0 || getal3.length == 0) {
+                document.write("U heeft niets ingegeven !");
+                return false;
+            } else if (isNaN(getal1) == true || isNaN(getal2) == true || isNaN(getal3) == true) {
+                document.write("Voer enkel getallen in!");
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function berekenHoeveelheid() {
+            let geboortejaar = prompt("Wat is uw geboortejaar?");
+            let leeftijd = prompt("Hou oud denk je te worden?");
+            let aantal = prompt("Hoeveel koppen koffie drinkt u per dag?");
+            let resultaat = controle(geboortejaar, leeftijd, aantal);
+
+            if (resultaat == true) {
+                tonen(geboortejaar, leeftijd, aantal);
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

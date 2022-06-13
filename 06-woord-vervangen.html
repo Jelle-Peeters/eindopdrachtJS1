@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Javascript</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        label {
+            display: inline-block;
+            text-align: right;
+            width: 200px;
+        }
+    </style>
+    <script>
+        "use strict";
+        function verzend() {
+            let zin = document.getElementById("zin").value;
+            let zoek = document.getElementById("zoek").value;
+            let vervang = document.getElementById("vervang").value;
+
+            if (zin.length == 0 || zoek.length == 0 || vervang.length == 0) {
+                alert("U hebt het formulier niet correct ingevuld");
+            }
+            else {
+                vervangWoord(zin, zoek, vervang);
+            }
+
+        }
+        function vervangWoord(zin, zoek, vervang) {
+            if (zin.search(zoek) == -1) {
+                document.getElementById("resultaat").value = "Dit woord is niet gevonden!";
+            }
+            else {
+                let resultaat = zin.replace(zoek, vervang);
+                document.getElementById("resultaat").value = resultaat;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form id="formulier">
+        <p>
+            <label for="zin">Zin:</label>
+            <input type="text" id="zin" />
+        </p>
+        <p>
+            <label for="zoek">Zoek dit woord:</label>
+            <input type="text" id="zoek" />
+        </p>
+        <p>
+            <label for="vervang">Dit woord komt in de plaats:</label>
+            <input type="text" id="vervang" />
+        </p>
+        <p>
+            <input type="button" value="Vervang" id="knop_vervang" onclick="verzend()" />
+        </p>
+            <label for="resultaat">Dit woord komt in de plaats:</label>
+            <input type="text" id="resultaat" value="" />
+        </p>
+    </form>
+</body>
+
+</html>
